@@ -4,7 +4,8 @@ import {
     faYoutube,
     faFacebook,
     faTwitter,
-    faInstagram
+    faInstagram,
+    faGithub
   } from "@fortawesome/free-brands-svg-icons";
   import './footer.css'
 function Footer() {
@@ -30,51 +31,57 @@ function Footer() {
         <h5 className="text-uppercase">Contact</h5>
 
         <ul className="list-unstyled mb-0">
+          <li><a  href="https://github.com/satyendrasingh8" >
+  <FontAwesomeIcon icon={faGithub} size="2x"  /><b>  Github  </b> 
+</a> </li><br></br>
           <li>
           <a href=""
   className="youtube social">
-  <FontAwesomeIcon icon={faYoutube} size="2x" />
-</a>          </li>
+  <FontAwesomeIcon icon={faYoutube} size="2x" /><b> Youtube  </b> 
+</a>          </li><br></br>
           <li>
           <a href=""
   className="facebook social">
-  <FontAwesomeIcon icon={faFacebook} size="2x" />
+  <FontAwesomeIcon icon={faFacebook} size="2x" /><b> Facebook  </b> 
 </a>
-          </li>
+          </li><br></br>
           <li>
           <a href="" className="twitter social">
-  <FontAwesomeIcon icon={faTwitter} size="2x" />
+  <FontAwesomeIcon icon={faTwitter} size="2x" /><b> Twitter  </b> 
 </a>
-          </li>
+          </li><br></br>
           
           <li>
           <a href=""
   className="instagram social">
-  <FontAwesomeIcon icon={faInstagram} size="2x" />
+  <FontAwesomeIcon icon={faInstagram} size="2x" /><b> Instagram </b> 
 </a>
-          </li>
+          </li><br></br>
         </ul>
       </div>
       
       <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
         <h5 className="text-uppercase mb-0">Links</h5>
-
+        <br></br>
         <ul className="list-unstyled">
           <li>
             <a href="/about" >About</a>
-          </li>
+          </li><br></br>
+          <li>
+            <a href="/faq" >FAQ</a>
+          </li><br></br>
           <li>
             <a href="/disclaimer" >Disclaimer</a>
-          </li>
+          </li><br></br>
           <li>
             <a href="/privacyPolicy" >PrivacyPolicy</a>
-          </li>
+          </li><br></br>
           <li>
             <a href="/termsAndCondition" >Terms&condition</a>
-          </li>
+          </li><br></br>
           <li>
             <a href="/complaint" >Complaint</a>
-          </li>
+          </li><br></br>
         </ul>
       </div>
       

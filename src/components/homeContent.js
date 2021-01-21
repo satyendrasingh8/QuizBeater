@@ -8,6 +8,7 @@ import {
   faTwitter,
   faInstagram,
   faTelegram,
+  faGithub
 
 } from "@fortawesome/free-brands-svg-icons";
 import './footer.css'
@@ -61,29 +62,32 @@ class HomeContent extends React.Component {
  getPosts();
  
 
-const getComments =async ()=>{
- await db.collection("postComment").orderBy('timestamp','desc')
-  .get()
-  .then(querySnapshot=> {
-    const commentData = [];
-      querySnapshot.forEach(doc => {
-        const data = doc.data();
-          // doc.data() is never undefined for query doc snapshot
-          commentData.push(data);
-      });
-      this.setState({
-       commentData:commentData
-     })
-     console.log("comment:",commentData);
-  })
-  .catch(function(error) {
-      console.log("Error getting documents: ", error);
-  });
-};
-
-getComments();
 }
 
+componentDidUpdate(){
+
+  const getComments =async ()=>{
+    await db.collection("postComment").orderBy('timestamp','desc')
+     .get()
+     .then(querySnapshot=> {
+       const commentData = [];
+         querySnapshot.forEach(doc => {
+           const data = doc.data();
+             // doc.data() is never undefined for query doc snapshot
+             commentData.push(data);
+         });
+         this.setState({
+          commentData:commentData
+        })
+        console.log("comment:",commentData);
+     })
+     .catch(function(error) {
+         console.log("Error getting documents: ", error);
+     });
+   };
+   
+   getComments();
+}
 
   render()
 {
@@ -132,17 +136,13 @@ getComments();
          
      <Row> <Card.Text as="h4">&nbsp; Join us: &nbsp;&nbsp; </Card.Text>
      <Card.Subtitle>  <a  href="https://t.me/FlipkartDailyQuiz" ><Button>
-  <FontAwesomeIcon icon={faTelegram} size="1x"  />  </ Button>
-</a> </Card.Subtitle>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<Card.Subtitle>   <a href="" ><Button>
-  <FontAwesomeIcon icon={faYoutube} size="1x" style={{color:'red'}} /> </ Button>
-</a> </Card.Subtitle>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<Card.Subtitle>   <a href=""><Button>
-  <FontAwesomeIcon icon={faInstagram} size="1x" style={{color:'black'}} />  </ Button>
-</a> </Card.Subtitle>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<Card.Subtitle>   <a href="" ><Button>
-  <FontAwesomeIcon icon={faFacebook} size="1x"  /> </ Button>
-</a> </Card.Subtitle>&nbsp;&nbsp;&nbsp;&nbsp;
+  <FontAwesomeIcon icon={faTelegram} size="2x"  />Join Telegram  </ Button>
+</a><br></br><br></br>
+<a  href="https://github.com/satyendrasingh8" ><Button variant="dark">
+  <FontAwesomeIcon icon={faGithub} size="2x"  /><b> Follow on Github  </b> </ Button>
+</a><br></br>
+ </Card.Subtitle>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
  <Card.Link href="/home"><b><i>WebServ4u.com</i> </b></Card.Link>
      </Row><br></br>
  <CarouselImage />
